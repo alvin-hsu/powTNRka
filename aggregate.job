@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#$ -N aggrgate
+#$ -l h_vmem=32G
+#$ -j y
+#$ -l h_rt=00:30:00
+#$ -hold_jid {{ job_ids|join(',') }}
+#$ -wd {{ work_dir }}
+#$ -o {{ job_dir }}/aggregate.o$JOB_ID
+{{ email_flags }}
+
+{{ command }}

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#$ -N powTNRka
+#$ -l h_vmem=16G
+#$ -j y
+#$ -l h_rt=00:30:00
+#$ -wd {{ work_dir }}
+#$ -o {{ job_dir }}/{{ name }}.o$JOB_ID
+#$ -e {{ job_dir }}/{{ name }}.e$JOB_ID
+
+{{ command }}
